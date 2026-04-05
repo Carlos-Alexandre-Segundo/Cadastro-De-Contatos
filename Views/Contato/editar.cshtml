@@ -1,0 +1,32 @@
+@model HomeModel
+@{
+    ViewData["Title"] = "Editar Contato";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Editar Contato</h1>
+</div>
+
+<form>
+    
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" class="form-control" placeholder="Digite o nome do contato">
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="text" class="form-control" placeholder="Digite o e-mail do contato">
+  </div>
+
+  <div class="mb-3">
+    <label for="número" class="form-label">Número</label>
+    <input type="long" class="form-control" placeholder="Digite o número do contato">
+  </div>
+
+  <div class="d-grid gap-2">
+  <buttom type="submit" class="btn btn-primary btn-block">Alterar</buttom>
+  <a class="btn btn-secondary btn-block" asp-controller="Contato" asp-action="Index" role="button">Voltar</a>
+  </div>
+
+</form>
