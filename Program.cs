@@ -1,11 +1,15 @@
 using ControleDeContatos.Data;
 using Microsoft.EntityFrameworkCore;
+using projeto_mvc.Repository;
+using projeto_mvc.Repository.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddEntityFrameworkSqlServer().AddDbContext<BancoContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
+builder.Services.AddEntityFrameworkSqlServer()
+    .AddDbContext<BancoContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
+builder.Services.AddScoped<IContatoRepository, ContatoRepository>();
 
 
 var app = builder.Build();
